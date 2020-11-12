@@ -1,0 +1,78 @@
+{% extends 'basic.html' %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+
+<div id="Subheader" style="padding:150px;background-color:gray;">
+  <div class="container" ">
+    <div class="column one">
+      <h1 class="title" style="text-align: center;font-size: 100px"><i>Contact Us</i></h1>
+    </div>
+  </div>
+</div>
+<div class="container my-4">
+  <h2>Get Started Today!</h2>
+  <h4>Please Fill out form below</h4>
+  <form action="/contact" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your First Name.">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your Last Name.">
+    </div>
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email.">
+    </div>
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input type="text" class="form-control" id="company" name="company" placeholder="Enter your Company Name.">
+    </div>
+    <div class="form-group">
+      <label for="website">Website</label>
+      <input type="text" class="form-control" id="website" name="website" placeholder="Enter your Website.">
+    </div>
+    <div class="form-group">
+      <label for="phone">Mobile No.</label>
+      <input type="mobile" class="form-control" id="phone" name="phone" placeholder="Enter your Mobile No.">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="your_enquiry">Your Enquiry</label>
+      <textarea class="your_enquiry" id="your_enquiry" name="your_enquiry" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="industry">Industry Type</label>
+            <select class="custom-select d-block w-100" id="country" name="industry" required="">
+              <option value="">Choose Your Industry Type</option>
+              <option>Baby Food</option>
+              <option>Coffee</option>
+              <option>Chemical</option>
+              <option>Namkeen</option>
+              <option>Masala's</option>
+              <option>Tea</option>
+            </select>
+    </div>
+    <div class="form-group">
+      <label for="product_type">Product Type</label>
+              <select class="custom-select d-block w-100" id="product_type" name="product_type" required="">
+                <option value="">Choose Product Type</option>
+                <option>Pouches</option>
+                <option>Rollstock</option>
+                <option>Labels</option>
+                <option>Bags</option>
+              </select>
+      </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+{% endblock body %}
